@@ -1,24 +1,37 @@
-function sumValues(a, b) {
+function sum(a, b) {
     let result = a + b
     return result;
 }
 
-function subtractValues(a, b) {
+function subtract(a, b) {
     let result = a - b;
     return result;
 }
 
-function multiplyValues(a, b) {
+function multiply(a, b) {
     let result = a * b;
     return result;
 }
 
-function divideValues(a, b) {
+function divide(a, b) {
     let result = a / b;
     return result;
 }
 
-console.log(sumValues(10, 5));
-console.log(subtractValues(10, 5));
-console.log(multiplyValues(10, 5));
-console.log(divideValues(10, 5));
+let firstValue = 1;
+let operator = '+';
+let secondValue = 1;
+
+function operate(firstValue, operator, secondValue) {
+    if (operator === '+') {
+        return sum(firstValue, secondValue);
+    } else if (operator === '-') {
+        return subtract(firstValue, secondValue);
+    } else if (operator === '*') {
+        return multiply(firstValue, secondValue);
+    } else if (operator === '/') {
+        divide(firstValue, secondValue);
+    } else {
+        return 'Invalid operator input';
+    }
+}
