@@ -1,3 +1,22 @@
+// const container = document.querySelector('#container');
+
+// function printCalculator() {
+//     for (let i = 0; i < 4; i++) {
+//         const column = document.createElement('div');
+//         column.setAttribute('id', `column-${i}`);
+//         column.setAttribute('class', 'columns');
+//         for (let j = 0; j < 6; j++) {
+//             const row = document.createElement('div');
+//             row.setAttribute('id', `row-${i}`);
+//             row.setAttribute('class', 'rows');
+//             column.appendChild(row);
+//         }
+//         container.appendChild(column);
+//     }
+// }
+
+// printCalculator();
+
 function sum(a, b) {
     let result = a + b
     return result;
@@ -35,3 +54,4 @@ function operate(firstValue, operator, secondValue) {
         return 'Invalid operator input';
     }
 }
+

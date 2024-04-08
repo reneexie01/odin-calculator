@@ -1,0 +1,22 @@
+/* #container {
+    width: 1000;
+    height: 1000px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.columns {
+    border: 1px solid blue;
+    width: 120px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rows {
+    border: 1px solid red;
+    width: 120px;
+    height: 100px;
+} */
