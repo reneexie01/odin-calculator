@@ -1,21 +1,13 @@
-// const container = document.querySelector('#container');
+const buttons = document.querySelectorAll("button");
+const display = document.querySelector("#display");
+let displayValue;
 
-// function printCalculator() {
-//     for (let i = 0; i < 4; i++) {
-//         const column = document.createElement('div');
-//         column.setAttribute('id', `column-${i}`);
-//         column.setAttribute('class', 'columns');
-//         for (let j = 0; j < 6; j++) {
-//             const row = document.createElement('div');
-//             row.setAttribute('id', `row-${i}`);
-//             row.setAttribute('class', 'rows');
-//             column.appendChild(row);
-//         }
-//         container.appendChild(column);
-//     }
-// }
-
-// printCalculator();
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        displayValue = button.value;
+        display.innerText = displayValue;
+    })
+})
 
 function sum(a, b) {
     let result = a + b
@@ -38,20 +30,20 @@ function divide(a, b) {
 }
 
 let firstValue = 1;
-let operator = '+';
+let operator = "+";
 let secondValue = 1;
 
 function operate(firstValue, operator, secondValue) {
-    if (operator === '+') {
+    if (operator === "+") {
         return sum(firstValue, secondValue);
-    } else if (operator === '-') {
+    } else if (operator === "-") {
         return subtract(firstValue, secondValue);
-    } else if (operator === '*') {
+    } else if (operator === "*") {
         return multiply(firstValue, secondValue);
-    } else if (operator === '/') {
+    } else if (operator === "/") {
         divide(firstValue, secondValue);
     } else {
-        return 'Invalid operator input';
+        return "Invalid operator input";
     }
 }
 
