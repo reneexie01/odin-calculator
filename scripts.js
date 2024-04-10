@@ -8,17 +8,9 @@ const equalsBtn = document.querySelector(".equals");
 
 const display = document.querySelector("#display");
 
-let displayValue = "";
 let firstValue = 0;
 let operator = "";
 let secondValue = 0;
-
-// operandBtns.forEach((button) => {
-//     button.addEventListener("click", () => {
-//         displayValue += button.textContent;
-//         display.innerText = displayValue;
-//     })
-// })
 
 // operator function
 operatorBtns.forEach((button) => {
@@ -67,25 +59,25 @@ equalsBtn.addEventListener("click", () => operate(firstValue, operator, secondVa
 function sum(a, b) {
     let result = a + b
     console.log("result: ", result);
-    return result;
+    display.innerText = result;
 }
 
 function subtract(a, b) {
     let result = a - b;
     console.log("result: ", result);
-    return result;
+    display.innerText = result;
 }
 
 function multiply(a, b) {
     let result = a * b;
     console.log("result: ", result);
-    return result;
+    display.innerText = result;
 }
 
 function divide(a, b) {
     let result = a / b;
     console.log("result: ", result);
-    return result;
+    display.innerText = result;
 }
 
 function operate(firstValue, operator, secondValue) {
