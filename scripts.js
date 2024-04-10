@@ -21,7 +21,7 @@ operatorBtns.forEach((button) => {
         } else if (button.textContent === "-") {
             operator = "-";
             console.log("operator: ", operator);
-        } else if (button.textContent === "*") {
+        } else if (button.textContent === "x") {
             operator = "*";
             console.log("operator: ", operator);
         } else if (button.textContent === "/") {
@@ -50,6 +50,15 @@ operandBtns.forEach((button) => {
     })
 })
 
+clearBtn.addEventListener("click", () => {
+    firstValue = 0;
+    console.log("firstValue: ", firstValue);
+    operator = "";
+    console.log("operator: ", operator);
+    secondValue = 0;
+    console.log("secondValue: ", secondValue);
+    display.innerText = 0;
+})
 equalsBtn.addEventListener("click", () => operate(firstValue, operator, secondValue));
 
 // if any of the operators are clicked and if firstValue is null store displayValue = firstValue;
