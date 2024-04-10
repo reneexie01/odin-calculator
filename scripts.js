@@ -26,6 +26,15 @@ operatorBtns.forEach((button) => {
         if (button.textContent === "+") {
             operator = "+";
             console.log("operator: ", operator);
+        } else if (button.textContent === "-") {
+            operator = "-";
+            console.log("operator: ", operator);
+        } else if (button.textContent === "*") {
+            operator = "*";
+            console.log("operator: ", operator);
+        } else if (button.textContent === "/") {
+            operator = "/";
+            console.log("operator: ", operator);
         }
     })
 })
@@ -38,13 +47,13 @@ operandBtns.forEach((button) => {
             firstInput += button.textContent;
             display.innerText = firstInput;
             firstValue = Number(firstInput);
-            console.log("firstValue: ", typeof firstValue);
+            console.log("firstValue: ", firstValue);
         } else {
             let secondInput = "";
             secondInput += button.textContent;
             display.innerText = secondInput;
             secondValue = Number(secondInput);
-            console.log("secondValue: ", typeof secondValue);
+            console.log("secondValue: ", secondValue);
         }
     })
 })
@@ -63,16 +72,19 @@ function sum(a, b) {
 
 function subtract(a, b) {
     let result = a - b;
+    console.log("result: ", result);
     return result;
 }
 
 function multiply(a, b) {
     let result = a * b;
+    console.log("result: ", result);
     return result;
 }
 
 function divide(a, b) {
     let result = a / b;
+    console.log("result: ", result);
     return result;
 }
 
