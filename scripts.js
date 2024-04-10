@@ -8,11 +8,10 @@ const equalsBtn = document.querySelector(".equals");
 
 const display = document.querySelector("#display");
 
-let firstValue = 0;
+let value1 = 0;
 let operator = "";
-let secondValue = 0;
+let value2 = 0;
 
-// operator function
 operatorBtns.forEach((button) => {
     button.addEventListener("click", () => {
         if (button.textContent === "+") {
@@ -31,39 +30,35 @@ operatorBtns.forEach((button) => {
     })
 })
 
-// operand function
 operandBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        if (operator === "") {
+        if (operator === "" || value1 == 0) {
             let firstInput = "";
             firstInput += button.textContent;
             display.innerText = firstInput;
-            firstValue = Number(firstInput);
-            console.log("firstValue: ", firstValue);
-        } else {
+            value1 = Number(firstInput);
+            console.log("value1: ", value1);
+        } else if (!value1 == 0) {
             let secondInput = "";
             secondInput += button.textContent;
             display.innerText = secondInput;
-            secondValue = Number(secondInput);
-            console.log("secondValue: ", secondValue);
+            value2 = Number(secondInput);
+            console.log("value2: ", value2);
         }
     })
 })
 
 clearBtn.addEventListener("click", () => {
-    firstValue = 0;
-    console.log("firstValue: ", firstValue);
+    value1 = 0;
+    console.log("value1: ", value1);
     operator = "";
     console.log("operator: ", operator);
-    secondValue = 0;
-    console.log("secondValue: ", secondValue);
+    value2 = 0;
+    console.log("value2: ", value2);
     display.innerText = 0;
 })
-equalsBtn.addEventListener("click", () => operate(firstValue, operator, secondValue));
 
-// if any of the operators are clicked and if firstValue is null store displayValue = firstValue;
-// if any of the operators are clicked and firstValue is not null store displayValue = secondValue;
-// for each operand do an if else statement that executes the respective functions
+equalsBtn.addEventListener("click", () => operate(value1, operator, value2));
 
 function sum(a, b) {
     let result = a + b
@@ -89,15 +84,15 @@ function divide(a, b) {
     display.innerText = result;
 }
 
-function operate(firstValue, operator, secondValue) {
+function operate(value1, operator, value2) {
     if (operator === "+") {
-        return sum(firstValue, secondValue);
+        return sum(value1, value2);
     } else if (operator === "-") {
-        return subtract(firstValue, secondValue);
+        return subtract(value1, value2);
     } else if (operator === "*") {
-        return multiply(firstValue, secondValue);
+        return multiply(value1, value2);
     } else if (operator === "/") {
-        divide(firstValue, secondValue);
+        divide(value1, value2);
     } else {
         return "Invalid operator input";
     }
