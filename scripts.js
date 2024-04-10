@@ -33,16 +33,16 @@ operatorBtns.forEach((button) => {
 operandBtns.forEach((button) => {
     button.addEventListener("click", () => {
         if (operator === "" || value1 == 0) {
-            let firstInput = "";
-            firstInput += button.textContent;
-            display.innerText = firstInput;
-            value1 = Number(firstInput);
+            let input1 = "";
+            input1 += button.textContent;
+            display.innerText = input1;
+            value1 = Number(input1);
             console.log("value1: ", value1);
         } else if (!value1 == 0) {
-            let secondInput = "";
-            secondInput += button.textContent;
-            display.innerText = secondInput;
-            value2 = Number(secondInput);
+            let input2 = "";
+            input2 += button.textContent;
+            display.innerText = input2;
+            value2 = Number(input2);
             console.log("value2: ", value2);
         }
     })
