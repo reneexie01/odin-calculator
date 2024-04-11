@@ -46,7 +46,7 @@ operandBtns.forEach((button) => {
             value2 = Number(input2);
             console.log("value2: ", value2);
             operate(value1, operator, value2);
-        } /* else if (value2 !== 0) {
+        } else if (value2 !== 0) {
             value1 = result;
             let input2 = "";
             input2 += button.textContent;
@@ -55,7 +55,7 @@ operandBtns.forEach((button) => {
             console.log("value1: ", value1)
             console.log("value2: ", value2);
             operate(value1, operator, value2);
-        } */
+        }
     })
 })
 
@@ -103,6 +103,6 @@ function operate(value1, operator, value2) {
     } else {
         return console.log("Invalid operator input");
     }
-    console.log("result operate function: ", result);
+    console.log("result: ", result);
     display.innerText = result;
 }
