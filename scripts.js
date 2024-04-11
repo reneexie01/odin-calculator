@@ -15,18 +15,35 @@ let result = 0;
 
 operatorBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        if (button.textContent === "+") {
-            operator = "+";
-            console.log("operator: ", operator);
-        } else if (button.textContent === "-") {
-            operator = "-";
-            console.log("operator: ", operator);
-        } else if (button.textContent === "x") {
-            operator = "*";
-            console.log("operator: ", operator);
-        } else if (button.textContent === "/") {
-            operator = "/";
-            console.log("operator: ", operator);
+        if (operator === "") {
+            if (button.textContent === "+") {
+                operator = "+";
+                console.log("operator: ", operator);
+            } else if (button.textContent === "-") {
+                operator = "-";
+                console.log("operator: ", operator);
+            } else if (button.textContent === "x") {
+                operator = "*";
+                console.log("operator: ", operator);
+            } else if (button.textContent === "/") {
+                operator = "/";
+                console.log("operator: ", operator);
+            }
+        } else {
+            operate(value1, operator, value2);
+            if (button.textContent === "+") {
+                operator = "+";
+                console.log("operator: ", operator);
+            } else if (button.textContent === "-") {
+                operator = "-";
+                console.log("operator: ", operator);
+            } else if (button.textContent === "x") {
+                operator = "*";
+                console.log("operator: ", operator);
+            } else if (button.textContent === "/") {
+                operator = "/";
+                console.log("operator: ", operator);
+            }
         }
     })
 })
@@ -45,7 +62,6 @@ operandBtns.forEach((button) => {
             display.innerText = input2;
             value2 = Number(input2);
             console.log("value2: ", value2);
-            operate(value1, operator, value2);
         } else if (value2 !== 0) {
             value1 = result;
             let input2 = "";
