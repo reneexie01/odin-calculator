@@ -12,6 +12,8 @@ let value1 = 0;
 let operator = "";
 let value2 = 0;
 let result = 0;
+let input1 = "";
+let input2 = "";
 
 operatorBtns.forEach((button) => {
     button.addEventListener("click", () => {
@@ -50,38 +52,36 @@ operatorBtns.forEach((button) => {
 
 operandBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        if (operator === "" || value1 == 0) {
-            let input1 = "";
+        if (operator == "") {
             input1 += button.textContent;
             display.innerText = input1;
             value1 = Number(input1);
             console.log("value1: ", value1);
-        } else if (value1 !== 0 && value2 == 0) {
-            let input2 = "";
-            input2 += button.textContent;
-            display.innerText = input2;
-            value2 = Number(input2);
-            console.log("value2: ", value2);
         } else if (value2 !== 0) {
-            value1 = result;
             let input2 = "";
+            value1 = result;
             input2 += button.textContent;
             display.innerText = input2;
             value2 = Number(input2);
             console.log("value1: ", value1)
             console.log("value2: ", value2);
             operate(value1, operator, value2);
+        } else if (operator !== "") {
+            input2 += button.textContent;
+            display.innerText = input2;
+            value2 = Number(input2);
+            console.log("value2: ", value2);
         }
     })
 })
 
 clearBtn.addEventListener("click", () => {
     value1 = 0;
-    console.log("value1: ", value1);
     operator = "";
-    console.log("operator: ", operator);
     value2 = 0;
-    console.log("value2: ", value2);
+    result = 0;
+    input1 = "";
+    input2 = "";
     display.innerText = 0;
 })
 
