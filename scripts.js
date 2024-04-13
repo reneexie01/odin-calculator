@@ -8,10 +8,10 @@ const equalsBtn = document.querySelector(".equals");
 
 const display = document.querySelector("#display");
 
-let value1 = 0;
+let value1 = "";
 let operator = "";
-let value2 = 0;
-let result = 0;
+let value2 = "";
+let result = "";
 let input1 = "";
 let input2 = "";
 
@@ -57,7 +57,7 @@ operandBtns.forEach((button) => {
             display.innerText = input1;
             value1 = Number(input1);
             console.log("value1: ", value1);
-        } else if (value2 !== 0) {
+        } else if (value2 !== "") {
             let input2 = "";
             value1 = result;
             input2 += button.textContent;
