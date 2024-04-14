@@ -90,22 +90,22 @@ equalsBtn.addEventListener("click", () => operate(value1, operator, value2));
 
 function sum(a, b) {
     let result = a + b
-    return result;
+    return result.toFixed(4);
 }
 
 function subtract(a, b) {
     let result = a - b;
-    return result;
+    return result.toFixed(4);
 }
 
 function multiply(a, b) {
     let result = a * b;
-    return result;
+    return result.toFixed(4);
 }
 
 function divide(a, b) {
     let result = a / b;
-    return result;
+    return result.toFixed(4);
 }
 
 function operate(value1, operator, value2) {
