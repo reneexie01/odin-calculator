@@ -9,25 +9,37 @@
 <body>
     <div id="container">
         <div id="display">0</div>
-        <button class="clear">AC</button>
-        <button class="sign">+/-</button>
-        <button class="percent">%</button>
-        <button class="operator">/</button>
-        <button class="operand">7</button>
-        <button class="operand">8</button>
-        <button class="operand">9</button>
-        <button class="operator">x</button>
-        <button class="operand">4</button>
-        <button class="operand">5</button>
-        <button class="operand">6</button>
-        <button class="operator">-</button>
-        <button class="operand">1</button>
-        <button class="operand">2</button>
-        <button class="operand">3</button>
-        <button class="operator">+</button>
-        <button class="operand">0</button>
-        <button class="decimal">.</button>
-        <button class="equals">=</button>
+        <div id="rows">
+            <div class="row" id="first">
+                <button class="clear">AC</button>
+                <button class="sign">+/-</button>
+                <button class="percent">%</button>
+                <button class="operator">/</button>
+            </div>
+            <div class="row" id="second">
+                <button class="operand">7</button>
+                <button class="operand">8</button>
+                <button class="operand">9</button>
+                <button class="operator">x</button>
+            </div>
+            <div class="row" id="third">
+                <button class="operand">4</button>
+                <button class="operand">5</button>
+                <button class="operand">6</button>
+                <button class="operator">-</button>
+            </div>
+            <div class="row" id="fourth">
+                <button class="operand">1</button>
+                <button class="operand">2</button>
+                <button class="operand">3</button>
+                <button class="operator">+</button>
+            </div>
+            <div class="row" id="fifth">
+                <button class="operand">0</button>
+                <button class="decimal">.</button>
+                <button class="equals">=</button>
+            </div>
+        </div>
     </div>  
     <script src="scripts.js"></script>
 </body>
