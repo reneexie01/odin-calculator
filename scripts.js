@@ -94,7 +94,13 @@ function clear() {
     display.innerText = 0;
 }
 
-equalsBtn.addEventListener("click", () => operate(value1, operator, value2));
+equalsBtn.addEventListener("click", () => {
+    if (value1 !== 0 && operator !== "" && value2 !== "") {
+        operate(value1, operator, value2);
+    } else {
+        clear();
+    }
+});
 
 function sum(a, b) {
     let sum = a + b
