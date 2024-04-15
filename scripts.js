@@ -1,3 +1,4 @@
+
 const operandBtns = document.querySelectorAll(".operand");
 const operatorBtns = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
@@ -5,7 +6,6 @@ const signBtn = document.querySelector(".sign");
 const percentBtn = document.querySelector(".percent");
 const decimalBtn = document.querySelector(".decimal");
 const equalsBtn = document.querySelector(".equals");
-
 const display = document.querySelector("#display");
 
 let value1 = 0;
@@ -52,7 +52,13 @@ operatorBtns.forEach((button) => {
 
 operandBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        if (operator == "") {
+        if (result === "Haha try again") {
+            clear();
+            input1 += button.textContent;
+            display.innerText = input1;
+            value1 = Number(input1);
+            console.log("value1: ", value1);
+        } else if (operator == "") {
             input1 += button.textContent;
             display.innerText = input1;
             value1 = Number(input1);
@@ -76,7 +82,9 @@ operandBtns.forEach((button) => {
     })
 })
 
-clearBtn.addEventListener("click", () => {
+clearBtn.addEventListener("click", () => clear());
+
+function clear() {
     value1 = 0;
     operator = "";
     value2 = 0;
@@ -84,28 +92,33 @@ clearBtn.addEventListener("click", () => {
     input1 = "";
     input2 = "";
     display.innerText = 0;
-})
+}
 
 equalsBtn.addEventListener("click", () => operate(value1, operator, value2));
 
 function sum(a, b) {
-    let result = a + b
-    return result.toFixed(4);
+    let sum = a + b
+    return result = Number(sum.toFixed(4));
 }
 
 function subtract(a, b) {
-    let result = a - b;
-    return result.toFixed(4);
+    let subtract = a - b;
+    return result = Number(subtract.toFixed(4));
 }
 
 function multiply(a, b) {
-    let result = a * b;
-    return result.toFixed(4);
+    let multiply = a * b;
+    return result = Number(multiply.toFixed(4));
 }
 
 function divide(a, b) {
-    let result = a / b;
-    return result.toFixed(4);
+    if (b == 0) {
+        let result = "Haha try again";
+        return result;
+    } else {
+        let divide = a / b;
+        return result = Number(divide.toFixed(4));
+    }
 }
 
 function operate(value1, operator, value2) {
