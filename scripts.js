@@ -2,9 +2,7 @@
 const operandBtns = document.querySelectorAll(".operand");
 const operatorBtns = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
-const signBtn = document.querySelector(".sign");
-const percentBtn = document.querySelector(".percent");
-const decimalBtn = document.querySelector(".decimal");
+const appendingBtn = document.querySelector(".appending");
 const equalsBtn = document.querySelector(".equals");
 const display = document.querySelector("#display");
 
@@ -20,31 +18,23 @@ operatorBtns.forEach((button) => {
         if (operator === "") {
             if (button.textContent === "+") {
                 operator = "+";
-                console.log("operator: ", operator);
             } else if (button.textContent === "-") {
                 operator = "-";
-                console.log("operator: ", operator);
             } else if (button.textContent === "x") {
                 operator = "*";
-                console.log("operator: ", operator);
             } else if (button.textContent === "/") {
                 operator = "/";
-                console.log("operator: ", operator);
             }
         } else {
             operate(value1, operator, value2);
             if (button.textContent === "+") {
                 operator = "+";
-                console.log("operator: ", operator);
             } else if (button.textContent === "-") {
                 operator = "-";
-                console.log("operator: ", operator);
             } else if (button.textContent === "x") {
                 operator = "*";
-                console.log("operator: ", operator);
             } else if (button.textContent === "/") {
                 operator = "/";
-                console.log("operator: ", operator);
             }
         }
     })
@@ -57,17 +47,14 @@ operandBtns.forEach((button) => {
             input1 += button.textContent;
             display.innerText = input1;
             value1 = Number(input1);
-            console.log("value1: ", value1);
         } else if (operator == "") {
             input1 += button.textContent;
             display.innerText = input1;
             value1 = Number(input1);
-            console.log("value1: ", value1);
         } else if (operator !== "" && result == "") {
             input2 += button.textContent;
             display.innerText = input2;
             value2 = Number(input2);
-            console.log("value2: ", value2);
         } else if (result !== "") {
             input2 = "";
             value2 = "";
@@ -75,8 +62,6 @@ operandBtns.forEach((button) => {
             display.innerText = input2;
             value1 = result;
             value2 = Number(input2);
-            console.log("value1: ", value1)
-            console.log("value2: ", value2);
             result = "";
         }
     })
@@ -137,8 +122,7 @@ function operate(value1, operator, value2) {
     } else if (operator === "/") {
         result = divide(value1, value2);
     } else {
-        return console.log("Invalid operator input");
+        return result = "Invalid operator input";
     }
-    console.log("result: ", result);
     display.innerText = result;
 }

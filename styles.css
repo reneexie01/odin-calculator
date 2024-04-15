@@ -3,39 +3,38 @@
 }
 
 #container {
-    border: 1px solid black;
     padding: 10px;
     background-color: black;
     max-width: 300px;
     margin: auto;
+    border-radius: 10px
 }
 
 #display {
-    border: 1px solid black;
     padding: 16px 8px;
     margin-bottom: 10px;
     font-size: 2em;
     background-color: white;
+    border-radius: 5px;
+    text-align: right;
 }
 
 #rows {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
 
 .row {
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 button {
     padding: 10px;
-    margin: 1px;
     width: 10px;
     height: 50px;
     font-size: 1em;
+    border-radius: 5px;
 }
 
 #first button, #second button, #third button, #fourth button, #fifth button {
