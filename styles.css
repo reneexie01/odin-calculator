@@ -41,12 +41,12 @@ button {
     flex-grow: 1;
 }
 
-.operator, .equals {
+.operator {
     background-color: orange;
     color: white;
 }
 
-.operand, .decimal {
+.operand, .decimal, .equals {
     background-color: gray;
     color: white;
 }

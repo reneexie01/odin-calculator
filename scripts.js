@@ -4,7 +4,6 @@ const clearBtn = document.querySelector(".clear");
 const equalsBtn = document.querySelector(".equals");
 const display = document.querySelector("#display");
 
-
 let value1 = 0;
 let operator = "";
 let value2 = "";
