@@ -11,6 +11,37 @@ let result = "";
 let input1 = "";
 let input2 = "";
 
+window.addEventListener("keydown", (event) => {
+    if (event.key === "." && display.innerText.includes(".")) {
+        return;
+    } else {
+        if (event.key >= 0 || event.key <= 9 || event.key === ".") {
+            if (result === "Haha try again") {
+                clear();
+                input1 += event.key;
+                display.innerText = input1;
+                value1 = Number(input1);
+            } else if (operator === "") {
+                input1 += event.key;
+                display.innerText = input1;
+                value1 = Number(input1);
+            } else if (operator !== "" && result === "") {
+                input2 += event.key;
+                display.innerText = input2;
+                value2 = Number(input2);
+            } else if (result !== "") {
+                input2 = "";
+                value2 = "";
+                input2 += event.key;
+                display.innerText = input2;
+                value1 = result;
+                value2 = Number(input2);
+                result = "";
+            }
+        }
+    }
+});
+
 operatorBtns.forEach((button) => {
     button.addEventListener("click", () => {
         if (operator === "") {
@@ -40,7 +71,7 @@ operatorBtns.forEach((button) => {
 
 appendBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        if (button.textContent == "." && display.innerText.includes(".")) {
+        if (button.textContent === "." && display.innerText.includes(".")) {
             return;
         } else {
             if (result === "Haha try again") {
@@ -48,11 +79,11 @@ appendBtns.forEach((button) => {
                 input1 += button.textContent;
                 display.innerText = input1;
                 value1 = Number(input1);
-            } else if (operator == "") {
+            } else if (operator === "") {
                 input1 += button.textContent;
                 display.innerText = input1;
                 value1 = Number(input1);
-            } else if (operator !== "" && result == "") {
+            } else if (operator !== "" && result === "") {
                 input2 += button.textContent;
                 display.innerText = input2;
                 value2 = Number(input2);
