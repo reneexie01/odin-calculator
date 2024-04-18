@@ -25,6 +25,10 @@ window.addEventListener("keydown", (event) => {
     } else if (event.key === "/") {
         operator = "/";
         console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+    } 
+
+    if (event.key === "Enter") {
+        enter();
     }
 
     if (event.key === "." && display.innerText.includes(".")) {
@@ -145,7 +149,9 @@ function clear() {
     console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
 }
 
-equalsBtn.addEventListener("click", () => {
+equalsBtn.addEventListener("click", () => enter());
+
+function enter() {
     if (value1 !== 0 && operator !== "" && value2 !== "") {
         operate(value1, operator, value2);
         value1 = result;
@@ -157,7 +163,7 @@ equalsBtn.addEventListener("click", () => {
     } else {
         clear();
     }
-});
+}
 
 function sum(a, b) {
     let sum = a + b
