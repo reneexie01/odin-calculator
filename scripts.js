@@ -34,6 +34,33 @@ window.addEventListener("keydown", (event) => {
     if (event.key === "." && display.innerText.includes(".")) {
         console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
         return;
+    } else if (event.key === "Backspace") {
+        if (result === "Haha try again") {
+            clear();
+            input1 = input1.slice(0, -1);
+            display.innerText = input1;
+            value1 = Number(input1);
+            console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+        } else if (operator === "") {
+            input1 = input1.slice(0, -1);
+            display.innerText = input1;
+            value1 = Number(input1);
+            console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+        } else if (operator !== "" && result === "") {
+            input2 = input2.slice(0, -1);
+            display.innerText = input2;
+            value2 = Number(input2);
+            console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+        } else if (result !== "") {
+            input2 = "";
+            value2 = "";
+            input2 = input2.slice(0, -1);
+            display.innerText = input2;
+            value1 = result;
+            value2 = Number(input2);
+            result = "";
+            console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+        }
     } else {
         if (event.key >= 0 || event.key <= 9 || event.key === ".") {
             if (result === "Haha try again") {
@@ -105,6 +132,33 @@ appendBtns.forEach((button) => {
     button.addEventListener("click", () => {
         if (button.textContent === "." && display.innerText.includes(".")) {
             return;
+        } else if (button.textContent === "Delete") {
+            if (result === "Haha try again") {
+                clear();
+                input1 = input1.slice(0, -1);
+                display.innerText = input1;
+                value1 = Number(input1);
+                console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+            } else if (operator === "") {
+                input1 = input1.slice(0, -1);
+                display.innerText = input1;
+                value1 = Number(input1);
+                console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+            } else if (operator !== "" && result === "") {
+                input2 = input2.slice(0, -1);
+                display.innerText = input2;
+                value2 = Number(input2);
+                console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+            } else if (result !== "") {
+                input2 = "";
+                value2 = "";
+                input2 = input2.slice(0, -1);
+                display.innerText = input2;
+                value1 = result;
+                value2 = Number(input2);
+                result = "";
+                console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+            }
         } else {
             if (result === "Haha try again") {
                 clear();
