@@ -11,6 +11,8 @@ let result = "";
 let input1 = "";
 let input2 = "";
 
+/* Keyboard support */
+
 window.addEventListener("keydown", (event) => {
 
     if (event.key === "+") {
@@ -35,7 +37,11 @@ window.addEventListener("keydown", (event) => {
         console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
         return;
     } else if (event.key === "Backspace") {
-        if (result === "Haha try again") {
+        if (operator === "" && value1 === 0 && value2 === "") {
+            display.innerText = 0;
+        } else if (operator == "" && value2 == "" && result !== "" && value1 !== 0) { 
+            clear();
+        } else if (result === "Haha try again") {
             clear();
             input1 = input1.slice(0, -1);
             display.innerText = input1;
@@ -93,7 +99,10 @@ window.addEventListener("keydown", (event) => {
     }
 });
 
+/* Manual buttons */
+
 operatorBtns.forEach((button) => {
+
     button.addEventListener("click", () => {
         if (operator === "") {
             if (button.textContent === "+") {
@@ -133,7 +142,11 @@ appendBtns.forEach((button) => {
         if (button.textContent === "." && display.innerText.includes(".")) {
             return;
         } else if (button.textContent === "Delete") {
-            if (result === "Haha try again") {
+            if (operator === "" && value1 === 0 && value2 === "") {
+                display.innerText = 0;
+            } else if (operator == "" && value2 == "" && result !== "" && value1 !== 0) { 
+                clear();
+            } else if (result === "Haha try again") {
                 clear();
                 input1 = input1.slice(0, -1);
                 display.innerText = input1;
@@ -188,6 +201,7 @@ appendBtns.forEach((button) => {
             }
         }
     })
+
 })
 
 clearBtn.addEventListener("click", () => clear());
