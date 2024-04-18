@@ -13,6 +13,20 @@ let input2 = "";
 
 window.addEventListener("keydown", (event) => {
 
+    if (event.key === "+") {
+        operator = "+";
+        console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+    } else if (event.key === "-") {
+        operator = "-";
+        console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+    } else if (event.key === "x") {
+        operator = "*";
+        console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+    } else if (event.key === "/") {
+        operator = "/";
+        console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
+    }
+
     if (event.key === "." && display.innerText.includes(".")) {
         console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
         return;
@@ -47,7 +61,6 @@ window.addEventListener("keydown", (event) => {
         }
     }
 });
-
 
 operatorBtns.forEach((button) => {
     button.addEventListener("click", () => {
