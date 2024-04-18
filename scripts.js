@@ -156,7 +156,7 @@ function enter() {
         operate(value1, operator, value2);
         value1 = result;
         operator = "";
-        value2 = 0;
+        value2 = "";
         input1 = "";
         input2 = "";
         console.log("v1: ", value1, "operator: ", operator, "v2: ", value2, "result: ", result)
